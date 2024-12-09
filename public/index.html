@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Інтернет провайдер</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>База даних клієнтів <br> Інтернет провайдера</h1>
+        
+        <!-- Форма для пошуку -->
+        <div id="search-form" class="search-form">
+            <input type="text" id="name" placeholder="Пошук по імені" oninput="searchClients()">
+            <select id="district" onchange="searchClients()">
+                <option value="">Обрати район</option>
+                <option value="Київський">Київський</option>
+                <option value="Шевченківський">Шевченківський</option>
+                <option value="Подільський">Подільський</option>
+            </select>
+            <select id="plan" onchange="searchClients()">
+                <option value="">Обрати план</option>
+                <option value="Інтернет 50 Мбіт/с">Інтернет 50 Мбіт/с</option>
+                <option value="Інтернет 100 Мбіт/с">Інтернет 100 Мбіт/с</option>
+                <option value="Інтернет 200 Мбіт/с">Інтернет 200 Мбіт/с</option>
+            </select>
+            <select id="status" onchange="searchClients()">
+                <option value="">Статус</option>
+                <option value="активний">Активний</option>
+                <option value="неактивний">Неактивний</option>
+            </select>
+            <button onclick="resetSearch()">Скинути пошук</button>
+        </div>
+
+        <!-- Кнопка для добавления клиента -->
+        <button id="add-client-btn" onclick="toggleAddClientForm()">Додати нового клієнта</button>
+        
+       <!-- Форма для добавления нового клиента -->
+<div id="add-client-form" class="add-client-form">
+    <form id="add-client-form-submit">
+        <input type="text" id="new-name" placeholder="Ім'я" required>
+        <input type="text" id="new-address" placeholder="Адреса" required>
+        <select id="new-district" required>
+            <option value="">Обрати район</option>
+            <option value="Київський">Київський</option>
+            <option value="Шевченківський">Шевченківський</option>
+            <option value="Подільський">Подільський</option>
+        </select>
+        
+        <!-- Поле выбора плана -->
+        <select id="new-plan" required>
+            <option value="">Обрати план</option>
+            <option value="Інтернет 50 Мбіт/с">Інтернет 50 Мбіт/с</option>
+            <option value="Інтернет 100 Мбіт/с">Інтернет 100 Мбіт/с</option>
+            <option value="Інтернет 200 Мбіт/с">Інтернет 200 Мбіт/с</option>
+        </select>
+        
+        <select id="new-status" required>
+            <option value="активний">Активний</option>
+            <option value="неактивний">Неактивний</option>
+        </select>
+        <button type="submit">Додати клієнта</button>
+    </form>
+</div>
+
+        <!-- Список клієнтів -->
+        <div id="clients-list"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
