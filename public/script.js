@@ -1,4 +1,3 @@
-// Функция для получения клиентов с сервера
 const searchClients = () => {
     const name = document.getElementById('name').value;
     const district = document.getElementById('district').value;
@@ -27,7 +26,6 @@ const searchClients = () => {
         });
 };
 
-// Функция для сброса фильтра
 const resetSearch = () => {
     document.getElementById('name').value = '';
     document.getElementById('district').value = '';
@@ -36,7 +34,6 @@ const resetSearch = () => {
     searchClients();
 };
 
-// Функция для добавления клиента
 document.getElementById('add-client-form-submit').addEventListener('submit', (event) => {
     event.preventDefault();
 
@@ -57,11 +54,10 @@ document.getElementById('add-client-form-submit').addEventListener('submit', (ev
     .then(data => {
         alert('Клієнт доданий');
         resetSearch();
-        toggleAddClientForm();  // Закрыть форму после добавления
+        toggleAddClientForm();  
     });
 });
 
-// Функция для редактирования клиента
 const editClient = (id) => {
     const name = prompt("Введіть нове ім'я:");
     const address = prompt("Введіть нову адресу:");
@@ -83,7 +79,6 @@ const editClient = (id) => {
     });
 };
 
-// Функция для удаления клиента
 const deleteClient = (id) => {
     if (confirm("Ви впевнені, що хочете видалити цього клієнта?")) {
         fetch(`/clients/${id}`, {
@@ -97,11 +92,9 @@ const deleteClient = (id) => {
     }
 };
 
-// Функция для показа/скрытия формы добавления клиента
 const toggleAddClientForm = () => {
     const form = document.getElementById('add-client-form');
     form.style.display = form.style.display === 'none' || form.style.display === '' ? 'flex' : 'none';
 };
 
-// Инициализируем поиск при загрузке страницы
 document.addEventListener('DOMContentLoaded', searchClients);

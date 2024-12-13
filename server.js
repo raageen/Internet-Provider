@@ -3,14 +3,11 @@ const sqlite3 = require('sqlite3').verbose();
 const app = express();
 const path = require('path');
 
-// Подключаем базу данных
 const db = new sqlite3.Database('provider.db');
 
-// Используем middleware для обработки JSON и статичных файлов
 app.use(express.json());
 app.use(express.static('public'));
 
-// Получение всех клиентов с фильтрацией
 app.get('/clients', (req, res) => {
     let { name, district, plan, status } = req.query;
     let query = `SELECT * FROM clients WHERE 1=1`;
@@ -28,7 +25,6 @@ app.get('/clients', (req, res) => {
     });
 });
 
-// Добавление нового клиента
 app.post('/clients', (req, res) => {
     const { name, address, district, plan, status } = req.body;
     const query = `INSERT INTO clients (name, address, district, plan, status) VALUES (?, ?, ?, ?, ?)`;
@@ -41,7 +37,6 @@ app.post('/clients', (req, res) => {
     });
 });
 
-// Обновление информации о клиенте
 app.put('/clients/:id', (req, res) => {
     const { id } = req.params;
     const { name, address, district, plan, status } = req.body;
@@ -55,7 +50,6 @@ app.put('/clients/:id', (req, res) => {
     });
 });
 
-// Удаление клиента
 app.delete('/clients/:id', (req, res) => {
     const { id } = req.params;
     const query = `DELETE FROM clients WHERE id = ?`;
@@ -68,7 +62,6 @@ app.delete('/clients/:id', (req, res) => {
     });
 });
 
-// Запуск сервера
 const PORT = 3000;
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);

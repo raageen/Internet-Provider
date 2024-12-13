@@ -1,4 +1,4 @@
-/* Основной стиль */
+
 * {
     margin: 0;
     padding: 0;
@@ -6,17 +6,16 @@
 }
 
 html, body {
-    height: 100%;  /* Обеспечиваем, что страница занимает всю высоту экрана */
+    height: 100%;  
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
     color: #333;
     display: flex;
     justify-content: center;
-    align-items: flex-start;  /* По умолчанию содержимое выравнивается сверху */
-    overflow-x: hidden; /* Убираем горизонтальную прокрутку */
+    align-items: flex-start;  
+    overflow-x: hidden; 
 }
 
-/* Контейнер для контента */
 .container {
     width: 100%;
     max-width: 800px;
@@ -24,20 +23,18 @@ html, body {
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    margin-top: 20px;  /* Отступ сверху */
+    margin-top: 20px; 
     display: flex;
     flex-direction: column;
     gap: 20px;
     overflow: hidden;
 }
 
-/* Заголовок */
 h1 {
     text-align: center;
     margin-bottom: 20px;
 }
 
-/* Стиль для формы поиска */
 .search-form {
     display: flex;
     justify-content: space-between;
@@ -63,7 +60,6 @@ h1 {
     background-color: #45a049;
 }
 
-/* Кнопка для добавления клиента */
 #add-client-btn {
     display: block;
     width: 100%;
@@ -80,7 +76,6 @@ h1 {
     background-color: #1e88e5;
 }
 
-/* Форма добавления клиента */
 .add-client-form {
     display: none;
     flex-direction: column;
@@ -111,11 +106,10 @@ h1 {
     background-color: #45a049;
 }
 
-/* Стили для списка клиентов */
 #clients-list {
     margin-top: 20px;
-    flex-grow: 1; /* Это гарантирует, что список будет занимать доступное пространство */
-    overflow-y: auto; /* Разрешаем вертикальную прокрутку, если список слишком большой */
+    flex-grow: 1; 
+    overflow-y: auto; 
 }
 
 .client {

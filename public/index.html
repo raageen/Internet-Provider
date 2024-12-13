@@ -10,7 +10,6 @@
     <div class="container">
         <h1>База даних клієнтів <br> Інтернет провайдера</h1>
         
-        <!-- Форма для пошуку -->
         <div id="search-form" class="search-form">
             <input type="text" id="name" placeholder="Пошук по імені" oninput="searchClients()">
             <select id="district" onchange="searchClients()">
@@ -33,10 +32,8 @@
             <button onclick="resetSearch()">Скинути пошук</button>
         </div>
 
-        <!-- Кнопка для добавления клиента -->
         <button id="add-client-btn" onclick="toggleAddClientForm()">Додати нового клієнта</button>
         
-       <!-- Форма для добавления нового клиента -->
 <div id="add-client-form" class="add-client-form">
     <form id="add-client-form-submit">
         <input type="text" id="new-name" placeholder="Ім'я" required>
@@ -48,7 +45,6 @@
             <option value="Подільський">Подільський</option>
         </select>
         
-        <!-- Поле выбора плана -->
         <select id="new-plan" required>
             <option value="">Обрати план</option>
             <option value="Інтернет 50 Мбіт/с">Інтернет 50 Мбіт/с</option>
@@ -64,7 +60,6 @@
     </form>
 </div>
 
-        <!-- Список клієнтів -->
         <div id="clients-list"></div>
     </div>
 
